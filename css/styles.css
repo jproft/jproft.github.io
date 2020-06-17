@@ -22,7 +22,7 @@ h1 {
   line-height: 100%;
   text-align: center;
   color: transparent;
-  background-color: #9933CC;
+  background-color: #9933cc;
   text-shadow: 0 2px 3px rgba(255, 255, 255, 0.5);
   -webkit-background-clip: text;
      -moz-background-clip: text;
@@ -54,7 +54,24 @@ div {
 }
 
 p {
-  font-size: 1.125rem
+  font-size: 1.125rem;
+  margin: 1rem 0;
+}
+
+blockquote {
+  background: #f0f0f0;
+  border-left: 0.625rem solid #ccc;
+  margin: 1rem 0;
+  padding: 0.5rem 0.625rem;
+}
+
+blockquote p {
+  display: inline;
+  font-size: 1rem;
+}
+
+blockquote footer {
+  margin-top: 0.5rem;
 }
 
 span span:before {
