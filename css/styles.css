@@ -30,7 +30,7 @@ h1 {
 }
 
 main {
-  max-width: 67.5rem;
+  max-width: 36rem;
   margin: auto;
   padding: 2rem;
   display: flex;
@@ -56,22 +56,6 @@ div {
 p {
   font-size: 1.125rem;
   margin: 1rem 0;
-}
-
-blockquote {
-  background: #f0f0f0;
-  border-left: 0.625rem solid #ccc;
-  margin: 1rem 0;
-  padding: 0.5rem 0.625rem;
-}
-
-blockquote p {
-  display: inline;
-  font-size: 1rem;
-}
-
-blockquote footer {
-  margin-top: 0.5rem;
 }
 
 span span:before {
