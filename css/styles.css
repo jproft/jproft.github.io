@@ -1,61 +1,111 @@
+:root {
+  --bg-color-stop-list:
+    hsl(280, 60%, 14%) 0, hsl(280, 60%, 14%)   5%,
+    hsl(280, 60%, 18%) 0, hsl(280, 60%, 18%)  10%,
+    hsl(280, 60%, 22%) 0, hsl(280, 60%, 22%)  15%,
+    hsl(280, 60%, 26%) 0, hsl(280, 60%, 26%)  20%,
+    hsl(280, 60%, 30%) 0, hsl(280, 60%, 30%)  25%,
+    hsl(280, 60%, 34%) 0, hsl(280, 60%, 34%)  30%,
+    hsl(280, 60%, 38%) 0, hsl(280, 60%, 38%)  35%,
+    hsl(280, 60%, 42%) 0, hsl(280, 60%, 42%)  40%,
+    hsl(280, 60%, 46%) 0, hsl(280, 60%, 46%)  45%,
+    hsl(280, 60%, 50%) 0, hsl(280, 60%, 50%)  50%,
+    hsl(280, 60%, 54%) 0, hsl(280, 60%, 54%)  55%,
+    hsl(280, 60%, 58%) 0, hsl(280, 60%, 58%)  60%,
+    hsl(280, 60%, 62%) 0, hsl(280, 60%, 62%)  65%,
+    hsl(280, 60%, 66%) 0, hsl(280, 60%, 66%)  70%,
+    hsl(280, 60%, 70%) 0, hsl(280, 60%, 70%)  75%,
+    hsl(280, 60%, 74%) 0, hsl(280, 60%, 74%)  80%,
+    hsl(280, 60%, 78%) 0, hsl(280, 60%, 78%)  85%,
+    hsl(280, 60%, 82%) 0, hsl(280, 60%, 82%)  90%,
+    hsl(280, 60%, 86%) 0, hsl(280, 60%, 86%)  95%,
+    hsl(280, 60%, 90%) 0, hsl(280, 60%, 90%) 100%;
+  --card-bg-color-stop-list:
+    hsl(100, 60%, 94%),
+    hsl(100, 60%, 82%);
+  --card-box-shadow-color:
+    hsla(280, 60%, 10%, 0.32);
+  --text-color:
+    hsl(0, 0%, 16%);
+}
+
 html {
+  display: flex;
   height: 100%;
-  overflow-y: scroll;
+}
+
+html:before {
+  content: '';
+  display: block;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background-blend-mode: multiply;
+  background-image:
+    linear-gradient(to top right, var(--bg-color-stop-list)),
+    linear-gradient(to left, var(--bg-color-stop-list));
 }
 
 body {
-  height: 100%;
   display: flex;
-  margin: 0 auto;
+  margin: auto;
   line-height: 140%;
-  font-family: "Karla", sans-serif;
-  color: #333;
+  color: var(--text-color);
+  font-family: 'Karla', sans-serif;
 }
 
-a {
-  color: #9933CC;
+body:before,
+body:after {
+  content: '';
+  min-width: 0;
+  flex: 0 0.1 2rem;
 }
 
 h1 {
   margin: 0;
-  font-size: 3rem;
+  font-size: 1.75rem;
   line-height: 100%;
-  text-align: center;
-  color: transparent;
-  background-color: #9933cc;
-  text-shadow: 0 2px 3px rgba(255, 255, 255, 0.5);
-  -webkit-background-clip: text;
-     -moz-background-clip: text;
-          background-clip: text;
 }
 
 main {
-  max-width: 36rem;
-  margin: auto;
-  padding: 2rem;
   display: flex;
   flex-wrap: wrap;
+  max-width: 66rem;
+  margin: 2rem 0;
+  padding: 2rem;
+  gap: 2rem;
+  box-shadow:
+     1px  1px  2px  0px var(--card-box-shadow-color),
+     3px  3px  6px -1px var(--card-box-shadow-color),
+     8px  8px 12px -2px var(--card-box-shadow-color),
+    20px 20px 32px -3px var(--card-box-shadow-color);
+  background-image:
+    radial-gradient(at 0 0, var(--card-bg-color-stop-list));
 }
 
 img {
   display: block;
-  margin: 1.5rem auto;
   max-width: 100%;
-  min-width: 150px;
-  border-radius: 5px;
+}
+
+main, img {
+  border-radius: 16px;
 }
 
 div {
-  margin: 0 1rem;   
-  flex: 1 1 25rem;
+  flex: 1 1 16rem;
   display: flex;
   flex-direction: column;
+}
+
+div:last-child {
   justify-content: center;
 }
 
 p {
   font-size: 1.125rem;
-  margin: 1rem 0;
+  margin: 1rem 0 0;
 }
 
 span span:before {
